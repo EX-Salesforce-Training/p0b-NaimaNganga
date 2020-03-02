@@ -1,0 +1,140 @@
+// Name: Project 0 Bravo
+// Author: Naima Nganga (naimanganga@gmail.com)
+// Date: 02/27/2020
+// Description: Series of apex methods to demonstrate
+// basic understanding of coding concepts.
+//
+/*
+* 1. Return the nth Fibonacci number
+* Test Cases:
+* Input: 0 Output: 0
+* Input: 1 Output: 1
+* Input: 2 Output: 1
+* Input: 10 Output: 55
+*/
+//
+public class P0B {  
+    
+    public static Integer nFibonacci( Integer n ){    
+    if ( n <= 0){
+        return 0;
+    }else if ( n == 1 || n == 2){
+        return 1;
+    }else{ 
+        integer position = nFibonacci(n-1)+nFibonacci(n-2);
+        return position;
+    }
+}//control flow statements- The 6 statements
+
+//* 2. Sort an array of integers.
+//* Test Cases:
+//* Input: [2,4,5,1,3,1] Output: [1,1,2,3,4,5]
+//* Input: [5,4,3,2,1] Output: [1,2,3,4,5]
+
+//* Don't use the sort() method... that would be lame.
+
+	public static List<Integer> sortArray( List<integer> intList ) {
+     
+        integer x;
+        boolean change=false;
+        do{
+            change=false; //to make sure we don't have an infinite loop
+        for (integer i = 0; i<intList.size(); i++){
+            if(intList[i]>intList[i+1]){
+                change=true;
+                x=intList[i+1];
+                intList.set(intList[i+1], intList[i]);
+                intList.set(intList[i], x);
+            }
+            
+           }
+    }while(change);
+    return intList;
+    
+    
+    
+        //we need a second loop to ensure that we are going through everything
+          // for(Integer currentValue:intList){
+              //  if(x<currentValue){
+                //    change=true;
+            }
+       
+           
+     //   
+     //   * 3. Return the factorial of n.
+/* Test Cases:
+/* Input: 0 Output: 1
+* Input: 1 Output: 1
+* Input: 3 Output: 6
+*/
+
+	
+public static Integer nFactorial( Integer n) {
+    Integer sum;
+    if (n == 0|| n==1){
+        return 1;
+    }for (integer i=2; i<n; i--){
+        integer result = n * i;
+            integer current = result * i;
+        	sum = current;
+                //return current; 
+            }
+   return sum;
+    }
+
+/*
+* 4. Rotate left
+* Given an array, array, and an integer, n, rotate the values in array left n times and return array
+* Test Cases:
+* Input: [1,2,3,4,5], 1 Output: [2,3,4,5,1]
+* Input: [1,2,3,4,5], 6 Output: [2,3,4,5,1]
+* Input: [1,2,3,4,5], 3 Output: [4,5,1,2,3]
+*/
+public static Integer[] rotateLeftNTimes( Integer[] Naima , Integer n) {
+    //array = 5; n =1;
+	//storeArray= Naima [0];
+    //array = [1,2,3,4,5]
+    for(integer i =0; i<=n;i++){
+        Naima.add(Naima[0]);
+        Naima.remove(Naima[0]);}
+        return Naima;
+       
+}
+          
+          
+          
+          
+/* 5. Balanced Brackets
+* A bracket is any one of the following: (, ), {, }, [, or ]
+*
+* The following are balanced brackets:
+* ( )
+* ( ) ( )
+* ( ( ) )
+* ( { [ ] } )
+*
+* The following are NOT balanced brackets:
+* (
+* )
+/* ( */
+    
+public static Boolean bracketsAreBalanced( String s ) {
+   
+    Map <String, String> brackets = new Map<String, String>{'('=>')', '{'=>'}', '['=>']'};
+    s = s.replaceAll(' ','');
+    List<String> strList = s.split('');
+    List<String> openedList = new List<String>();
+    
+   
+        for(integer i = 0; i < strList.size();i++){
+            if(strList[i+1] == brackets.get(strList[i])){
+                openedList.add(strList[i]);
+               
+            }
+        } 
+    
+    	System.debug(openedList);
+    
+    	return true;
+    }    
+}
